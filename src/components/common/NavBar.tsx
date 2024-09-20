@@ -1,14 +1,15 @@
+import cvLogo from "@/assets/logo/cv-logo-white.svg";
+import { navData } from "@/data/navData";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FiSearch } from "react-icons/fi";
-import { navData } from "@/data/navData";
-import cvLogo from "@/assets/logo/cv-logo-white.svg";
+import FileVerification from "./FileVerification";
 
 const NavBar: React.FC = () => {
   return (
-    <nav className="bg-black bg-opacity-10 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-black bg-opacity-10 backdrop-blur-md shadow-lg hidden md:block fixed w-full top-0 z-50">
       <div className="container mx-auto px-4 py-6 flex items-center justify-between">
+        {/* Left Side - Logo */}
         <div className="flex-shrink-0">
           <Link href="/">
             <Image
@@ -21,7 +22,8 @@ const NavBar: React.FC = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex space-x-8">
+        {/* Center - Menu Items (hidden on small devices) */}
+        <div className="flex space-x-8">
           {navData.map((item) => (
             <Link
               key={item.name}
@@ -33,11 +35,12 @@ const NavBar: React.FC = () => {
           ))}
         </div>
 
+        {/* Right Side - UAN Number and FileVerification component */}
         <div className="flex items-center space-x-4">
-          <div className="text-white font-semibold">UAN: 1234567890</div>
-          <button className="text-white hover:text-gray-200">
-            <FiSearch className="h-6 w-6" />
-          </button>
+          <div className="bg-white text-black px-4 py-2 rounded-lg font-semibold">
+            <Link href={"tel:1234567890"}>UAN: 1234567890</Link>
+          </div>
+          <FileVerification />
         </div>
       </div>
     </nav>
