@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import mouseEffect from "@/js/mouseEffect";
+import mouseEffect from "@/functions/mouseEffect";
 
 const Cursor = () => {
   React.useEffect(() => {
