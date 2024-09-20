@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import FileNumberInput from "@/components/fileVerification/FileNumberInput";
 
-function FileVerification() {
+function FileVerificationButton() {
   const [isInputVisible, setIsInputVisible] = useState(false);
 
   const handleButtonClick = () => {
@@ -29,4 +29,4 @@ function FileVerification() {
   );
 }
 
-export default FileVerification;
+export default FileVerificationButton;

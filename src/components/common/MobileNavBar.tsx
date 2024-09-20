@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 import cvLogo from "@/assets/logo/cv-logo-white.svg";
-import FileVerification from "./FileVerification";
+import FileVerification from "../fileVerification/FileVerificationButton";
 
 const socialLinks = [
   { href: "https://facebook.com", icon: <FaFacebook /> },

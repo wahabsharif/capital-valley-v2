@@ -3,7 +3,7 @@ import { navData } from "@/data/navData";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import FileVerification from "./FileVerification";
+import FileVerificationButton from "@/components/fileVerification/FileVerificationButton";
 
 const NavBar: React.FC = () => {
   return (
@@ -35,12 +35,12 @@ const NavBar: React.FC = () => {
           ))}
         </div>
 
-        {/* Right Side - UAN Number and FileVerification component */}
+        {/* Right Side - UAN Number and FileVerificationButton component */}
         <div className="flex items-center space-x-4">
           <div className="bg-white text-black px-4 py-2 rounded-lg font-semibold">
             <Link href={"tel:1234567890"}>UAN: 1234567890</Link>
           </div>
-          <FileVerification />
+          <FileVerificationButton />
         </div>
       </div>
     </nav>
