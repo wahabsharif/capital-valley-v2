@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence, motion, Variants } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 
 interface GradualSpacingProps {
@@ -23,21 +22,25 @@ export default function GradualSpacing({
   className,
 }: GradualSpacingProps) {
   return (
-    <div className="flex justify-center space-x-1">
+    <div className="flex justify-center w-full">
       <AnimatePresence>
-        {text.split("").map((char, i) => (
-          <motion.h1
-            key={i}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={framerProps}
-            transition={{ duration, delay: i * delayMultiple }}
-            className={cn("drop-shadow-sm ", className)}
-          >
-            {char === " " ? <span>&nbsp;</span> : char}
-          </motion.h1>
-        ))}
+        <div className="inline-flex">
+          {" "}
+          {/* Use inline-flex to keep characters on one line */}
+          {text.split("").map((char, i) => (
+            <motion.h1
+              key={i}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={framerProps}
+              transition={{ duration, delay: i * delayMultiple }}
+              className={cn("drop-shadow-sm", className)} // Keep className for styling
+            >
+              {char === " " ? <span>&nbsp;</span> : char}
+            </motion.h1>
+          ))}
+        </div>
       </AnimatePresence>
     </div>
   );

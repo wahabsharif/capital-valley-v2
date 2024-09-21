@@ -12,7 +12,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import Image from "next/image";
-import cvLogo from "@/assets/logo/cv-logo-white.svg";
+import cvLogo from "@/assets/logo/capital-valley-logo-white.svg";
 import FileVerification from "../fileVerification/FileVerificationButton";
 
 const socialLinks = [
@@ -31,7 +31,7 @@ const MobileNavBar: React.FC = () => {
 
   return (
     <nav className="playfair-font fixed top-0 left-0 w-full bg-white bg-opacity-30 dark:bg-black dark:bg-opacity-30 backdrop-blur-lg shadow-md z-50 md:hidden">
-      <div className="flex justify-between items-center p-4 container mx-auto">
+      <div className="flex justify-between items-center p-2 container mx-auto">
         {/* Left side: Logo */}
         <div className="flex-shrink-0">
           <Link href="/">
@@ -40,7 +40,7 @@ const MobileNavBar: React.FC = () => {
               alt="Logo"
               width={40}
               height={40}
-              className="w-36"
+              className="w-10"
             />
           </Link>
         </div>

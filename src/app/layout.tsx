@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import NavBar from "@/components/common/NavBar";
 import MobileNavBar from "@/components/common/MobileNavBar";
 import Cursor from "@/components/common/Cursor";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Other head elements like links or scripts */}
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
