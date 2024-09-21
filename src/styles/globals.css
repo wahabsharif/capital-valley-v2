@@ -80,3 +80,20 @@ body {
 }
 
 /* ====================== [ End Cursor Style ] ====================== */
+
+.gradient-text {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#00aeef),
+    color-stop(0.2, #1c75bc),
+    color-stop(0.4, #1e7dc1),
+    color-stop(0.6, #2292d0),
+    color-stop(0.8, #27aae1),
+    to(#175377)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
