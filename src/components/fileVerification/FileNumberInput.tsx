@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaCheckCircle } from "react-icons/fa";
 import axios from "axios";
 import { IoEnterOutline } from "react-icons/io5";
 
@@ -41,14 +41,14 @@ const FileNumberInput: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
     try {
       const response = await axios.get(
-        `/api/ApisController.php?form_no=${fileNumber}` // Use the proxy endpoint
+        `/api/ApisController.php?form_no=${fileNumber}`
       );
       if (response.data && response.data.length > 0) {
         setFileData(response.data[0][0]);
-        setErrorMessage(""); // Clear error if data is found
+        setErrorMessage("");
       } else {
         setFileData(null);
-        setErrorMessage("No data found for this form number."); // Show this error if no data is returned
+        setErrorMessage("No data found for this form number.");
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -99,53 +99,123 @@ const FileNumberInput: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             {errorMessage}
           </p>
         )}
+
         {fileData && (
-          <div className="mt-4 text-white">
-            <p>
-              <strong>Verify Status:</strong> {fileData.verify_status}
-            </p>
-            <p>
-              <strong>VPRN No:</strong> {fileData.vprn_no}
-            </p>
-            <p>
-              <strong>App No:</strong> {fileData.app_no}
-            </p>
-            <p>
-              <strong>Manual Receipt No:</strong> {fileData.manual_receipt_no}
-            </p>
-            <p>
-              <strong>Booking Date:</strong> {fileData.booking_date}
-            </p>
-            <p>
-              <strong>Verification Date:</strong> {fileData.verification_date}
-            </p>
-            <p>
-              <strong>File Holder:</strong> {fileData.file_holder}
-            </p>
-            <p>
-              <strong>CNIC:</strong> {fileData.cnic}
-            </p>
-            <p>
-              <strong>Address:</strong> {fileData.address}
-            </p>
-            <p>
-              <strong>Contact:</strong> {fileData.contact}
-            </p>
-            <p>
-              <strong>FG Date:</strong> {fileData.fgdate}
-            </p>
-            <p>
-              <strong>Com Res Type:</strong> {fileData.com_res_type}
-            </p>
-            <p>
-              <strong>Size Name:</strong> {fileData.size_name}
-            </p>
-            <p>
-              <strong>Registered Num:</strong> {fileData.registered_num}
-            </p>
-            <p>
-              <strong>Sector:</strong> {fileData.sector}
-            </p>
+          <div className="mt-4 flex items-center space-x-2 text-green-600">
+            <FaCheckCircle className="text-xl" />
+            <p className="text-lg font-semibold">File Verified</p>
+          </div>
+        )}
+
+        {fileData && (
+          <div className="mt-6 w-full bg-white p-6 rounded-lg shadow-lg max-h-96 overflow-y-auto">
+            <h2 className="text-2xl font-bold text-center mb-4 text-gray-900">
+              File Details
+            </h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Verify Status:</strong>
+                </p>
+                <p className="text-gray-900">
+                  {fileData.verify_status || "N/A"}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>VPRN No:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.vprn_no || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>App No:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.app_no || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Manual Receipt No:</strong>
+                </p>
+                <p className="text-gray-900">
+                  {fileData.manual_receipt_no || "N/A"}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Booking Date:</strong>
+                </p>
+                <p className="text-gray-900">
+                  {fileData.booking_date || "N/A"}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Verification Date:</strong>
+                </p>
+                <p className="text-gray-900">
+                  {fileData.verification_date || "N/A"}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>File Holder:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.file_holder || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>CNIC:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.cnic || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Address:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.address || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Contact:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.contact || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>FG Date:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.fgdate || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Com Res Type:</strong>
+                </p>
+                <p className="text-gray-900">
+                  {fileData.com_res_type || "N/A"}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Size Name:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.size_name || "N/A"}</p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Registered Num:</strong>
+                </p>
+                <p className="text-gray-900">
+                  {fileData.registered_num || "N/A"}
+                </p>
+              </div>
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  <strong>Sector:</strong>
+                </p>
+                <p className="text-gray-900">{fileData.sector || "N/A"}</p>
+              </div>
+            </div>
           </div>
         )}
       </div>
