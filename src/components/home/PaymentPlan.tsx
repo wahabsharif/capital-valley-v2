@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import paymentPlansData from "@/data/paymentPlansData";
 import Image from "next/image";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import React, { useEffect, useState } from "react";
 
 const PaymentPlan: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

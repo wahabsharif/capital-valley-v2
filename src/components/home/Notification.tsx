@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { notificationsData } from "@/data/notificationsData";
 import Image from "next/image";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useEffect, useState } from "react";
 
 const Notifications: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -87,33 +86,6 @@ const Notifications: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Previous and Next buttons */}
-      {/* <button
-        onClick={handlePrev}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none"
-      >
-        <IoIosArrowBack />
-      </button>
-      <button
-        onClick={handleNext}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none"
-      >
-        <IoIosArrowForward />
-      </button>
-
-      <div className="flex justify-center mt-4 space-x-2">
-        {Array.from({ length: totalSlides }).map((_, index) => (
-          <span
-            key={index}
-            className={`w-3 h-3 rounded-full ${
-              index === Math.floor(currentIndex / imagesPerView)
-                ? "bg-blue-500"
-                : "bg-gray-400"
-            }`}
-          ></span>
-        ))}
-      </div> */}
 
       {/* Modal for displaying the clicked image */}
       {modalImage && (
