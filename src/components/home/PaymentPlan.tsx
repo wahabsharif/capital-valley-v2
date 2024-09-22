@@ -61,18 +61,21 @@ const PaymentPlan: React.FC = () => {
       <div
         className="flex transition-transform duration-500"
         style={{
-          transform: `translateX(-${(currentIndex / totalSlides) * 100}%)`, // Change to slide to the right
+          transform: `translateX(-${(currentIndex / totalSlides) * 100}%)`,
         }}
       >
         {paymentPlansData.map((plan) => (
-          <div key={plan.id} className="flex-none w-1/3 px-2">
+          <div
+            key={plan.id}
+            className="flex-none w-full sm:w-1/2 md:w-1/3 px-2"
+          >
             <Image
               src={plan.image}
               alt={plan.title}
               className="w-full object-cover rounded-xl cursor-pointer"
               height={3508}
               width={2480}
-              onClick={() => openModal(plan.image)} // Open modal on click
+              onClick={() => openModal(plan.image)}
             />
             <div className="p-4">
               <h3 className="text-lg font-bold">{plan.title}</h3>
@@ -81,20 +84,6 @@ const PaymentPlan: React.FC = () => {
           </div>
         ))}
       </div>
-
-      {/* Previous and Next buttons */}
-      <button
-        onClick={handlePrev}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none"
-      >
-        <IoIosArrowBack />
-      </button>
-      <button
-        onClick={handleNext}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none"
-      >
-        <IoIosArrowForward />
-      </button>
 
       {/* Modal for displaying the clicked image */}
       {modalImage && (
