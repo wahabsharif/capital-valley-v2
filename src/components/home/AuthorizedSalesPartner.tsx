@@ -4,7 +4,7 @@ import Image from "next/image";
 import { salesPartnerLogos } from "@/data/salesPartnerLogos";
 
 const firstRow = salesPartnerLogos.slice(0, salesPartnerLogos.length / 2);
-const secondRow = salesPartnerLogos.slice(salesPartnerLogos.length / 2);
+// const secondRow = salesPartnerLogos.slice(salesPartnerLogos.length / 2);
 
 const AuthorizedSalesPartnerCard = ({ img }: { img: string }) => {
   return (
@@ -17,9 +17,9 @@ const AuthorizedSalesPartnerCard = ({ img }: { img: string }) => {
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <div className="flex flex-row items-center gap-2">
+      <div className="flex flex-row w-full h-full items-center gap-4">
         <Image
-          className="rounded-full w-40 h-40"
+          className="rounded-full w-full h-full"
           width={1000}
           height={1000}
           alt=""
@@ -49,14 +49,14 @@ export function AuthorizedSalesPartner() {
           />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      {/* <Marquee reverse pauseOnHover className="[--duration:20s]">
         {secondRow.map((partnersLogo) => (
           <AuthorizedSalesPartnerCard
             key={partnersLogo.img}
             {...partnersLogo}
           />
         ))}
-      </Marquee>
+      </Marquee> */}
     </section>
   );
 }

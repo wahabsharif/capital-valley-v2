@@ -31,13 +31,13 @@ const ScrollToTop: React.FC = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-5 right-5 bg-blue-500 text-white p-2 rounded transition-opacity duration-300 ${
+      className={`fixed bottom-5 right-5 bg-blue-500 text-white p-2 rounded-xl text-2xl transition-opacity duration-300 z-50 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       style={{ display: isVisible ? "block" : "none" }}
     >
-<IoIosArrowUp />
-</button>
+      <IoIosArrowUp />
+    </button>
   );
 };
 
