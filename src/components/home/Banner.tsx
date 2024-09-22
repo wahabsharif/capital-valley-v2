@@ -24,7 +24,7 @@ const Banner = () => {
             className="text-4xl md:text-6xl font-extrabold gradient-text"
             words="Capital of the Capital."
           />
-          <BlurFade className="text-gray-300 text-lg md:text-2xl mt-4">
+          <BlurFade className="text-gray-300 text-xl md:text-2xl mt-4">
             <p>0 KM from New Islamabad International Airport.</p>
           </BlurFade>
         </div>
@@ -38,9 +38,9 @@ const Banner = () => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 p-2 md:p-4 border-gray-300 rounded-full"
+            className="border-2 p-2 md:p-4 bg-gray-700 hover:bg-gray-300 border-gray-300 rounded-full text-gray-300 text-sm md:text-sm lg:text-md hover:text-gray-700 transition-colors duration-300"
           >
-            <Icon className="text-white text-sm md:text-sm lg:text-md hover:text-thBlue transition-colors duration-300" />
+            <Icon />
           </Link>
         ))}
       </div>
