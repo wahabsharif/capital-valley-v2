@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
         {/* Right Side - UAN Number and FileVerificationButton component */}
         <div className="flex items-center space-x-4">
           <div className="bg-white text-black px-4 py-2 rounded-lg font-semibold">
-            <Link href={"tel:1234567890"}>UAN: 1234567890</Link>
+            <Link href={"tel:03111177716"}>UAN: 0311 1177716</Link>
           </div>
           <FileVerificationButton />
         </div>

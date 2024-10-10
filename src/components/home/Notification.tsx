@@ -11,15 +11,6 @@ const Notifications: React.FC = () => {
   const autoSlideInterval = 2000;
 
   // Calculate the total number of sets based on imagesPerView
-  const totalSlides = Math.ceil(notificationsData.length / imagesPerView);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0
-        ? (totalSlides - 1) * imagesPerView
-        : prevIndex - imagesPerView
-    );
-  };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>

@@ -86,7 +86,7 @@ const MobileNavBar: React.FC = () => {
           </ul>
         </div>
         <div className="bg-white flex justify-center items-center text-black px-4 py-2 rounded-lg w-3/4 mx-auto m-4 font-semibold">
-          <Link href={"tel:1234567890"}>UAN: 1234567890</Link>
+          <Link href={"tel:03111177716"}>UAN: 0311 1177716</Link>
         </div>
 
         <div className="flex justify-center p-4 space-x-4 border-t border-gray-200">

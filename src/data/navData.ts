@@ -7,7 +7,7 @@ interface NavItem {
 
 export const navData: NavItem[] = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
+  { name: "About Us", href: "#" },
+  { name: "Executive Block", href: "#" },
+  { name: "General Block", href: "#" },
 ];

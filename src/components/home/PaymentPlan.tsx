@@ -13,14 +13,6 @@ const PaymentPlan: React.FC = () => {
   // Calculate the total number of sets based on imagesPerView
   const totalSlides = Math.ceil(paymentPlansData.length / imagesPerView);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0
-        ? (totalSlides - 1) * imagesPerView
-        : prevIndex - imagesPerView
-    );
-  };
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex + imagesPerView >= paymentPlansData.length
